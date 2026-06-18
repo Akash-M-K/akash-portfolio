@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Akash M —Python developer </title>
+
+  <meta name="description" content="Akash M — Full-Stack Developer & Digital Architect. Building elegant web experiences and exploring the frontier of AI/ML at SASTRA University." />
+  <meta name="author" content="Akash M" />
+
+  <meta property="og:title" content="Akash M — Digital Architect" />
+  <meta property="og:description" content="Full-Stack Developer building the future, one interface at a time." />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Preconnect for performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- Preloader -->
+  <div id="preloader" aria-hidden="true">
+    <div class="preloader-inner">
+      <div class="preloader-logo">
+        <span class="pl-char">A</span><span class="pl-char">K</span><span class="pl-char">A</span><span class="pl-char">S</span><span class="pl-char">H</span>
+      </div>
+      <div class="preloader-bar"><div class="preloader-fill"></div></div>
+      <p class="preloader-label">Initializing workspace…</p>
+    </div>
+  </div>
+
+  <!-- Custom Cursor -->
+  <div id="cursor" aria-hidden="true"><div class="cursor-dot"></div></div>
+  <div id="cursor-ring" aria-hidden="true"></div>
+
+  <!-- Command Palette -->
+  <div id="cmd-overlay" role="dialog" aria-modal="true" aria-label="Command palette" hidden>
+    <div id="cmd-palette">
+      <div class="cmd-search-wrap">
+        <i class="fa fa-search cmd-icon" aria-hidden="true"></i>
+        <input type="text" id="cmd-input" placeholder="Type a command…" autocomplete="off" spellcheck="false" aria-label="Search commands" />
+        <kbd class="cmd-esc">ESC</kbd>
+      </div>
+      <ul id="cmd-list" role="listbox" aria-label="Available commands"></ul>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <header id="navbar" role="banner">
+    <nav class="nav-inner" aria-label="Main navigation">
+      <a href="#hero" class="nav-logo" aria-label="Back to top">
+        <span class="logo-bracket">[</span>AK<span class="logo-bracket">]</span>
+      </a>
+      <ul class="nav-links" role="list">
+        <li><a href="#about" class="nav-item">About</a></li>
+        <li><a href="#skills" class="nav-item">Skills</a></li>
+        <li><a href="#projects" class="nav-item">Projects</a></li>
+        <li><a href="#certifications" class="nav-item">Certs</a></li>
+        <li><a href="#contact" class="nav-item">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button id="cmd-trigger" class="nav-btn" aria-label="Open command palette (Ctrl+K)" title="Ctrl+K">
+          <i class="fa fa-terminal" aria-hidden="true"></i>
+          <span class="cmd-hint">⌘K</span>
+        </button>
+        <button id="theme-toggle" class="nav-btn" aria-label="Toggle light/dark theme">
+          <i class="fa fa-moon" aria-hidden="true" id="theme-icon"></i>
+        </button>
+        <button class="nav-btn hamburger" id="hamburger" aria-label="Toggle mobile menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+    <!-- Mobile menu -->
+    <div class="mobile-menu" id="mobile-menu" hidden>
+      <a href="#about" class="mobile-link">About</a>
+      <a href="#skills" class="mobile-link">Skills</a>
+      <a href="#projects" class="mobile-link">Projects</a>
+      <a href="#certifications" class="mobile-link">Certs</a>
+      <a href="#contact" class="mobile-link">Contact</a>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <!-- ═══════════════════════════════════════ HERO ═══════════════════════════════════════ -->
+    <section id="hero" aria-label="Introduction">
+      <canvas id="bg-canvas" aria-hidden="true"></canvas>
+
+      <div class="hero-inner">
+        <div class="hero-eyebrow reveal-up">
+          <span class="eyebrow-dot"></span>
+          <span>Available for opportunities</span>
+        </div>
+
+        <h1 class="hero-name reveal-up" aria-label="Akash M">
+          <span class="name-word">Ak<span class="name-accent">ash  M</span></span>
+          
+          
+        </h1>
+
+        <div class="hero-role reveal-up">
+          <span class="role-prefix">I </span>
+          <span id="typewriter" aria-live="polite"></span>
+          <span class="cursor-blink" aria-hidden="true">|</span>
+        </div>
+
+        <p class="hero-tagline reveal-up">
+          Building elegant systems at the intersection of <em>web</em> and <em>AI&ML</em><br />
+          CS undergrad @ SASTRA University.
+        </p>
+
+        <div class="hero-cta reveal-up">
+          <a href="227003168_AkashM.pdf" download class="btn-primary magnetic" aria-label="Download Akash's Resume">
+            <i class="fa fa-download" aria-hidden="true"></i>
+            Download Resume
+          </a>
+          <a href="#projects" class="btn-ghost magnetic">
+            View Work <i class="fa fa-arrow-right" aria-hidden="true"></i>
+          </a>
+        </div>
+
+        <div class="hero-socials reveal-up">
+          <a href="https://www.linkedin.com/in/akash-m-1966b6378/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn profile">
+            <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+          </a>
+          <a href="https://www.instagram.com/akash___7754/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram profile">
+            <i class="fab fa-instagram" aria-hidden="true"></i>
+          </a>
+          <a href="mailto:mkpraveenmkakash@gmail" class="social-link" aria-label="Send email">
+            <i class="fa fa-envelope" aria-hidden="true"></i>
+          </a>
+          <a href="tel:+919345791863" class="social-link" aria-label="Call Akash">
+            <i class="fa fa-phone" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="scroll-indicator" aria-hidden="true">
+        <div class="scroll-line"></div>
+        <span>scroll</span>
+      </div>
+
+      <!-- Background toggle -->
+      <button id="bg-toggle" class="bg-toggle-btn" aria-label="Toggle animated background" title="Toggle background animation">
+        <i class="fa fa-circle-nodes" aria-hidden="true"></i>
+      </button>
+    </section>
+
+    <!-- ═══════════════════════════════════════ ABOUT ═══════════════════════════════════════ -->
+    <section id="about" aria-label="About me">
+      <div class="section-wrap">
+        <div class="section-header reveal-up">
+          <span class="section-tag">01 / About</span>
+          <h2 class="section-title">The <span class="gradient-text">story</span> so far</h2>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-story reveal-left">
+            <p class="story-lead">
+               I'm a Computer Science student at SASTRA University, but academics are just the foundation. My real passion lies in  <strong>Artificial Intelligence and Machine Learning</strong>, where I've built hands-on experience through projects, research, and practical problem-solving.
+            </p>
+            <p class="story-body">
+              What drives me is building things that matter: responsive web applications that feel fast and intuitive, ML pipelines that find patterns in noise.I believe the best engineers are architects—people who see the full system before writing the first line.
+            </p>
+            <p class="story-body">
+              Right now I'm deep in Python, machine learning experimentation, and AI fundamentals. I move between layers—from UI to inference to network—because I think the most interesting problems live at the boundaries.
+            </p>
+
+            <div class="about-values">
+              <div class="value-chip">
+                <i class="fa fa-bolt" aria-hidden="true"></i> Speed-first
+              </div>
+              <div class="value-chip">
+                <i class="fa fa-eye" aria-hidden="true"></i> Design-aware
+              </div>
+              <div class="value-chip">
+                <i class="fa fa-shield" aria-hidden="true"></i> Security-minded
+              </div>
+              <div class="value-chip">
+                <i class="fa fa-infinity" aria-hidden="true"></i> Lifelong learner
+              </div>
+            </div>
+          </div>
+
+          <div class="about-timeline reveal-right">
+            <h3 class="timeline-heading">Journey</h3>
+            
+            <div class="timeline">
+              <div class="tl-item">
+                <div class="tl-dot"></div>
+                <div class="tl-content">
+                  <span class="tl-date">2025</span>
+                  <h4 class="tl-title">Full-Stack Certification</h4>
+                  <p class="tl-desc">NoviTech R&D — intensive full-stack development programme covering modern web architectures.</p>
+                </div>
+              </div>
+              <div class="tl-item">
+                <div class="tl-dot"></div>
+                <div class="tl-content">
+                  <span class="tl-date">2025</span>
+                  <h4 class="tl-title">Network Basics</h4>
+                  <p class="tl-desc"> Cisco Networking Academy </p>
+                </div>
+              </div>
+              
+              <div class="tl-item">
+                <div class="tl-dot"></div>
+                <div class="tl-content">
+                  <span class="tl-date">2023–Present</span>
+                  <h4 class="tl-title">BTech Computer Science</h4>
+                  <p class="tl-desc">SASTRA University — building the theoretical and practical foundations of software engineering.</p>
+                </div>
+              </div>
+              <div class="tl-item">
+                <div class="tl-dot"></div>
+                <div class="tl-content">
+                  <span class="tl-date">2026</span>
+                  <h4 class="tl-title">Artificial Intelligence </h4>
+                  <p class="tl-desc"> NoviTech R&D Private Limited</p>
+                </div>
+              </div>
+              <div class="tl-item">
+                <div class="tl-dot"></div>
+                <div class="tl-content">
+                  <span class="tl-date">2026</span>
+                  <h4 class="tl-title">Data Analytics</h4>
+                  <p class="tl-desc"> NoviTech R&D Private Limited</p>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════ SKILLS ═══════════════════════════════════════ -->
+    <section id="skills" aria-label="Skills">
+      <div class="section-wrap">
+        <div class="section-header reveal-up">
+          <span class="section-tag">02 / Skills</span>
+          <h2 class="section-title">The <span class="gradient-text">stack</span></h2>
+        </div>
+
+        <div class="skills-grid">
+          <div class="skill-category reveal-up" data-delay="0">
+            <div class="skill-cat-header">
+              <div class="skill-cat-icon"><i class="fa fa-code" aria-hidden="true"></i></div>
+              <h3>Frontend</h3>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-tag" data-level="90">HTML5</span>
+              <span class="skill-tag" data-level="88">CSS3</span>
+              <span class="skill-tag" data-level="80">JavaScript</span>
+              <span class="skill-tag" data-level="75">React</span>
+              <span class="skill-tag" data-level="65">Figma</span>
+            </div>
+          </div>
+
+          <div class="skill-category reveal-up" data-delay="100">
+            <div class="skill-cat-header">
+              <div class="skill-cat-icon"><i class="fa fa-server" aria-hidden="true"></i></div>
+              <h3>Backend & Data</h3>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-tag" data-level="78">Python</span>
+              <span class="skill-tag" data-level="60">Node.js</span>
+              <span class="skill-tag" data-level="60">Express.js</span>
+              <span class="skill-tag" data-level="55">REST APIs</span>
+              <span class="skill-tag" data-level="60">SQL</span>
+            </div>
+          </div>
+
+          <div class="skill-category reveal-up" data-delay="200">
+            <div class="skill-cat-header">
+              <div class="skill-cat-icon"><i class="fa fa-brain" aria-hidden="true"></i></div>
+              <h3>AI / ML</h3>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-tag" data-level="68">TensorFlow</span>
+              <span class="skill-tag" data-level="65">Machine Learning</span>
+              <span class="skill-tag" data-level="60">Keras</span>
+              <span class="skill-tag" data-level="55">OpenCV</span>
+            </div>
+          </div>
+
+          
+          <div class="skill-category reveal-up" data-delay="400">
+            <div class="skill-cat-header">
+              <div class="skill-cat-icon"><i class="fa fa-wrench" aria-hidden="true"></i></div>
+              <h3>Tools</h3>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-tag" data-level="85">Git & GitHub</span>
+              <span class="skill-tag" data-level="82">VS Code</span>
+              <span class="skill-tag" data-level="70">Google Colab</span>
+              <span class="skill-tag" data-level="65">HuggingFace</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════ PROJECTS ═══════════════════════════════════════ -->
+    <section id="projects" aria-label="Projects">
+      <div class="section-wrap">
+        <div class="section-header reveal-up">
+          <span class="section-tag">03 / Projects</span>
+          <h2 class="section-title">Selected <span class="gradient-text">work</span></h2>
+        </div>
+
+        <div class="project-filters reveal-up" role="group" aria-label="Filter projects">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="web">Web/AI</button>
+          <button class="filter-btn" data-filter="ml">AI/ML</button>
+        </div>
+
+        <div class="projects-grid" id="projects-grid">
+
+          <article class="project-card featured reveal-up" data-category="web" tabindex="0" role="button" aria-label="View Chola Art project details">
+            <div class="project-card-bg" style="--card-accent: #06b6d4;"></div>
+            <div class="project-featured-badge">Featured</div>
+            <div class="project-card-inner">
+              <div class="project-meta">
+                <span class="project-category">Web/AI</span>
+                <span class="project-year">2025</span>
+              </div>
+              <h3 class="project-title">LearnChat AI</h3>
+              <p class="project-desc">Built a full-stack AI learning platform with Google Gemini, featuring interactive chat, image analysis, auto-generated quizzes, study material downloads, and progress tracking</p>
+              <div class="project-tech-row">
+                <span class="tech-pill">HTML</span>
+                <span class="tech-pill">CSS</span>
+                <span class="tech-pill">JavaScript</span>
+                <span class="tech-pill">JWT</span>
+                <span class="tech-pill">Google Gemini API</span>
+                <span class="tech-pill">React node.js Express.js</span>
+                
+                
+              </div>
+              <div class="project-achievements">
+                <div class="achievement"><i class="fa fa-check-circle" aria-hidden="true"></i> Fully responsive across all viewports</div>
+                <div class="achievement"><i class="fa fa-check-circle" aria-hidden="true"></i> Live production deployment</div>
+                <div class="achievement"><i class="fa fa-check-circle" aria-hidden="true"></i> Secured the application with JWT, bcrypt, CORS, and rate limiting; designed a modular in memory store with a clear MongoDB migration path</div>
+              </div>
+              </div>
+              
+            </div>
+          </article>
+          <br>
+          <article class="project-card reveal-up" data-category="ml" tabindex="0" role="button" aria-label="View ML project details" data-delay="100">
+            <div class="project-card-bg" style="--card-accent: #8b5cf6;"></div>
+            <div class="project-card-inner">
+              <div class="project-meta">
+                <span class="project-category">AI / ML</span>
+                <span class="project-year">2026</span>
+              </div>
+              <h3 class="project-title">Rice Blast Disease Detection System</h3>
+              <p class="project-desc">Built an end-to-end disease severity classifier that processes rice leaf images in real time,enabling farmers to receive instant diagnostic feedback through a web upload interface.</p>
+              <div class="project-tech-row">
+                <span class="tech-pill">Python</span>
+                <span class="tech-pill">TensorFlow</span>
+                <span class="tech-pill">OpenCV</span>
+                <span class="tech-pill">CNN</span>
+              </div>
+              <div class="project-achievements">
+                <div class="achievement"><i class="fa fa-check-circle" aria-hidden="true"></i>Deployed the model as an interactive Streamlit application</div>
+                <div class="achievement"><i class="fa fa-check-circle" aria-hidden="true"></i>  reducing the barrier to agricultural diagnostics for non technical users with zero software</div>
+              </div>
+              
+              
+          </article>
+          <br>
+          <article class="project-card reveal-up" data-category="web" tabindex="0" role="button" aria-label="View Portfolio project details" data-delay="200">
+            <div class="project-card-bg" style="--card-accent: #3b82f6;"></div>
+            <div class="project-card-inner">
+              <div class="project-meta">
+                <span class="project-category">Web</span>
+                <span class="project-year">2025</span>
+              </div>
+              <h3 class="project-title">This Portfolio</h3>
+              <p class="project-desc">A premium digital workspace built from scratch with vanilla HTML, CSS, and JavaScript. Particle canvas, command palette, custom cursor, and cinematic scroll reveals—zero dependencies.</p>
+              <div class="project-tech-row">
+                <span class="tech-pill">HTML5</span>
+                <span class="tech-pill">CSS3</span>
+                <span class="tech-pill">Vanilla JS</span>
+              </div>
+              <div class="project-achievements">
+                <div class="achievement"><i class="fa fa-check-circle" aria-hidden="true"></i> 60fps animations, zero frameworks</div>
+                <div class="achievement"><i class="fa fa-check-circle" aria-hidden="true"></i> Command palette + custom cursor</div>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════ CERTIFICATIONS ═══════════════════════════════════════ -->
+    <section id="certifications" aria-label="Certifications">
+      <div class="section-wrap">
+        <div class="section-header reveal-up">
+          <span class="section-tag">04 / Credentials</span>
+          <h2 class="section-title">Certified <span class="gradient-text">expertise</span></h2>
+        </div>
+
+        <div class="certs-grid">
+          <div class="cert-card reveal-up" data-delay="0">
+            <div class="cert-glow" style="--cert-color: #3b82f6;"></div>
+            <div class="cert-icon-wrap" style="--cert-color: #3b82f6;">
+              <i class="fa-solid fa-code" aria-hidden="true"></i>
+            </div>
+            <div class="cert-body">
+              <h3 class="cert-name">Full-Stack Development</h3>
+              <p class="cert-org">NoviTech R&D Pvt Ltd</p>
+              <p class="cert-date">2025</p>
+            </div>
+            <a href="AKASH M (1) fullstack.pdf" target="_blank" rel="noopener noreferrer" class="cert-link" aria-label="View Full-Stack Development certificate">
+              <i class="fa fa-arrow-up-right-from-square" aria-hidden="true"></i>
+            </a>
+          </div>
+
+          <div class="cert-card reveal-up" data-delay="100">
+            <div class="cert-glow" style="--cert-color: #06b6d4;"></div>
+            <div class="cert-icon-wrap" style="--cert-color: #06b6d4;">
+             <i class="fa-solid fa-brain"></i>
+            </div>
+            <div class="cert-body">
+              <h3 class="cert-name">AI</h3>
+              <p class="cert-org">NoviTech R&D Pvt Ltd</p>
+              <p class="cert-date">2026</p>
+            </div>
+            <a href="AKASH M (2)Ai.pdf" target="_blank" rel="noopener noreferrer" class="cert-link" aria-label="AI certificate">
+              <i class="fa fa-arrow-up-right-from-square" aria-hidden="true"></i>
+            </a>
+          </div>
+
+          <div class="cert-card reveal-up" data-delay="200">
+            <div class="cert-glow" style="--cert-color: #8b5cf6;"></div>
+            <div class="cert-icon-wrap" style="--cert-color: #8b5cf6;">
+              <i class="fa-solid fa-chart-line" aria-hidden="true"></i>
+            </div>
+            <div class="cert-body">
+              <h3 class="cert-name">Data Analytics</h3>
+              <p class="cert-org">NoviTech R&D Pvt Ltd</p>
+              <p class="cert-date">2026</p>
+            </div>
+            <a href="AKASH M (1)DA.pdf" target="_blank" rel="noopener noreferrer" class="cert-link" aria-label="View Data Analytics certificate">
+              <i class="fa fa-arrow-up-right-from-square" aria-hidden="true"></i>
+            </a>
+          </div>
+
+          <div class="cert-card reveal-up" data-delay="300">
+            <div class="cert-glow" style="--cert-color: #10b981;"></div>
+            <div class="cert-icon-wrap" style="--cert-color: #10b981;">
+              <i class="fa-solid fa-computer"></i>
+            </div>
+            <div class="cert-body">
+              <h3 class="cert-name">Networking Basics</h3>
+              <p class="cert-org"> Cisco Networking Academy program</p>
+              <p class="cert-date">2025</p>
+            </div>
+            <a href="AKASH M networkbasic.pdf" target="_blank" rel="noopener noreferrer" class="cert-link" aria-label="View Cyber Security certificate">
+              <i class="fa fa-arrow-up-right-from-square" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════ CONTACT ═══════════════════════════════════════ -->
+    <section id="contact" aria-label="Contact">
+      <div class="section-wrap">
+        <div class="section-header reveal-up">
+          <span class="section-tag">05 / Contact</span>
+          <h2 class="section-title">Let's <span class="gradient-text">build</span> something</h2>
+          <p class="section-subtitle">Open to internships, collaborations, and interesting problems.</p>
+        </div>
+
+        <div class="contact-layout">
+          <div class="contact-form-wrap reveal-left">
+            <form id="contact-form" novalidate aria-label="Contact form">
+              <div class="form-group">
+                <label for="form-name">Name</label>
+                <input type="text" id="form-name" name="name" placeholder="Your name" autocomplete="name" required aria-required="true" />
+                <span class="field-error" role="alert"></span>
+              </div>
+              <div class="form-group">
+                <label for="form-email">Email</label>
+                <input type="email" id="form-email" name="email" placeholder="your@email.com" autocomplete="email" required aria-required="true" />
+                <span class="field-error" role="alert"></span>
+              </div>
+              <div class="form-group">
+                <label for="form-message">Message</label>
+                <textarea id="form-message" name="message" placeholder="Tell me about your project or just say hello…" rows="5" required aria-required="true"></textarea>
+                <span class="field-error" role="alert"></span>
+              </div>
+              <button type="submit" class="btn-primary magnetic form-submit" id="form-submit">
+                <span class="submit-text"><i class="fa fa-paper-plane" aria-hidden="true"></i> Send message</span>
+                <span class="submit-loading" hidden><i class="fa fa-circle-notch fa-spin" aria-hidden="true"></i> Sending…</span>
+                <span class="submit-success" hidden><i class="fa fa-check" aria-hidden="true"></i> Message sent!</span>
+              </button>
+            </form>
+          </div>
+
+          <div class="contact-info reveal-right">
+            <div class="contact-links">
+              <a href="mailto:mkpraveenmkakash@gmail.com" class="contact-row" aria-label="Email Abishek">
+                <div class="contact-row-icon"><i class="fa fa-envelope" aria-hidden="true"></i></div>
+                <div class="contact-row-body">
+                  <span class="contact-row-label">Email</span>
+                  <span class="contact-row-value">mkpraveenmkakash@gmail.com</span>
+                </div>
+                <i class="fa fa-arrow-right contact-row-arrow" aria-hidden="true"></i>
+              </a>
+              <a href="tel:+919345791863" class="contact-row" aria-label="Call Abishek">
+                <div class="contact-row-icon"><i class="fa fa-phone" aria-hidden="true"></i></div>
+                <div class="contact-row-body">
+                  <span class="contact-row-label">Phone</span>
+                  <span class="contact-row-value">+91 9345791863</span>
+                </div>
+                <i class="fa fa-arrow-right contact-row-arrow" aria-hidden="true"></i>
+              </a>
+              <a href="https://www.linkedin.com/in/akash-m-1966b6378/" target="_blank" rel="noopener noreferrer" class="contact-row" aria-label="LinkedIn profile">
+                <div class="contact-row-icon"><i class="fab fa-linkedin-in" aria-hidden="true"></i></div>
+                <div class="contact-row-body">
+                  <span class="contact-row-label">LinkedIn</span>
+                  <span class="contact-row-value">Akash M</span>
+                </div>
+                <i class="fa fa-arrow-right contact-row-arrow" aria-hidden="true"></i>
+              </a>
+              <a href="https://www.instagram.com/akash___7754/" target="_blank" rel="noopener noreferrer" class="contact-row" aria-label="Instagram profile">
+                <div class="contact-row-icon"><i class="fab fa-instagram" aria-hidden="true"></i></div>
+                <div class="contact-row-body">
+                  <span class="contact-row-label">Instagram</span>
+                  <span class="contact-row-value">@akash___7754</span>
+                </div>
+                <i class="fa fa-arrow-right contact-row-arrow" aria-hidden="true"></i>
+              </a>
+            </div>
+
+            <div class="contact-location">
+              <i class="fa fa-location-dot" aria-hidden="true"></i>
+              <span>Tamil Nadu, India · IST (UTC+5:30)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer id="footer" role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-sig">
+        <span class="footer-name">Akash M</span>
+        <span class="footer-tagline">Python and AI&Ml delevoper</span>
+      </div>
+      <div class="footer-links" role="list">
+        <a href="#hero" class="footer-link" role="listitem">Home</a>
+        <a href="#about" class="footer-link" role="listitem">About</a>
+        <a href="#projects" class="footer-link" role="listitem">Projects</a>
+        <a href="#contact" class="footer-link" role="listitem">Contact</a>
+      </div>
+      <div class="footer-socials">
+        <a href="https://www.linkedin.com/in/akash-m-1966b6378/" target="_blank" rel="noopener noreferrer" class="footer-social" aria-label="LinkedIn">
+          <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+        </a>
+        <a href="https://www.instagram.com/akash___7754/" target="_blank" rel="noopener noreferrer" class="footer-social" aria-label="Instagram">
+          <i class="fab fa-instagram" aria-hidden="true"></i>
+        </a>
+        <a href="mailto:mkpraveenmkakash@gmail.com" class="footer-social" aria-label="Email">
+          <i class="fa fa-envelope" aria-hidden="true"></i>
+        </a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Akash. Built with intent.</span>
+      <button id="back-to-top" class="back-top-btn" aria-label="Back to top">
+        <i class="fa fa-arrow-up" aria-hidden="true"></i>
+      </button>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
